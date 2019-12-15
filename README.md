@@ -20,7 +20,7 @@ For Payroll purpose:
     Input: Date of Payment, Amount to be paied (SATOSHI), The wallet address where you want recieve your funds
   
   
-For Exceed amount payment
+For Exceed amount payment:
  
     Add # to Payroll
   
