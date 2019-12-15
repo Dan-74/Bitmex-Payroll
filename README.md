@@ -8,7 +8,10 @@ NOTE1 : All input amounts are in SATOSHI.
 
 NOTE2 : Each payment has to be confirmed by mail (time limit 30 min) or will be canceled.
 
+BITMEX: https://www.bitmex.com/register/Sh02pG
+
 CCXT: https://github.com/ccxt/ccxt
+
 PYOTP: https://github.com/pyauth/pyotp
 
 # Usage
