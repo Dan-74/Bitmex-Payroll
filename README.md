@@ -15,16 +15,15 @@ PYOTP: https://github.com/pyauth/pyotp
 
 For Payroll purpose:
   
-  Run Payroll
+    Run Payroll
   
-  Input: Date of Payment, Amount to be paied (SATOSHI), The wallet address where you want recieve your funds
+    Input: Date of Payment, Amount to be paied (SATOSHI), The wallet address where you want recieve your funds
   
   
-for Exceed amount payment
-
+For Exceed amount payment
  
-  Add # to Payroll
+    Add # to Payroll
   
-  Remove # from PayExcess
+    Remove # from PayExcess
   
-  Input:Amount you DON'T want withdrawal(SATOSHI), Amount you want withdrawal(SATOSHI), The wallet address where you want recieve your funds
+    Input:Amount you DON'T want withdrawal(SATOSHI), Amount you want withdrawal(SATOSHI), The wallet address where you want recieve your funds
