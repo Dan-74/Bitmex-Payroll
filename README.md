@@ -18,6 +18,8 @@ For Payroll purpose:
     Run Payroll
   
     Input: Date of Payment, Amount to be paied (SATOSHI), The wallet address where you want recieve your funds
+    
+    PayRoll ('15', '10000', 'YourWalletAddress')
   
   
 For Exceed amount payment:
@@ -27,3 +29,5 @@ For Exceed amount payment:
     Remove # from PayExcess
   
     Input:Amount you DON'T want withdrawal(SATOSHI), Amount you want withdrawal(SATOSHI), The wallet address where you want recieve your funds
+    
+    PayExcess ('9033741','10000', 'YourWalletAddress')
