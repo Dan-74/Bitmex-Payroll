@@ -4,7 +4,7 @@ An useful script based on CCXT and PYOTP modules that allow you to set an automa
 It creates a Payroll to use with bot. 
 You can set-up an Event Manager or AWS schedule to run it on daly basis and at your choose date you will recieve automatically a paiment from to your external wallet.
 
-NOTE1 : All input amounts are in SATOSHI.
+NOTE1 : All input amounts are in USD.
 
 NOTE2 : Each payment has to be confirmed by mail (time limit 30 min) or will be canceled.
 
@@ -20,9 +20,9 @@ For Payroll purpose:
   
     Run Payroll
   
-    Input: Date of Payment, Amount to be paied (SATOSHI), The wallet address where you want recieve your funds
+    Input: Date of Payment, Amount to be paied (USD), The wallet address where you want recieve your funds
     
-    PayRoll ('15', '10000', 'YourWalletAddress')
+    PayRoll ('15', '50', 'YourWalletAddress')
   
   
 For Exceed amount payment:
@@ -31,6 +31,6 @@ For Exceed amount payment:
   
     Remove # from PayExcess
   
-    Input:Amount you DON'T want withdrawal(SATOSHI), Amount you want withdrawal(SATOSHI), The wallet address where you want recieve your funds
+    Input:Amount you DON'T want withdrawal(USD), Amount you want withdrawal(USD), The wallet address where you want recieve your funds
     
-    PayExcess ('9033741','10000', 'YourWalletAddress')
+    PayExcess ('1000','50', 'YourWalletAddress')
