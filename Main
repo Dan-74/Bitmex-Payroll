@@ -16,6 +16,8 @@ exchange = ccxt.bitmex({
                   })  
 Today = datetime.today() 
 def PayRoll (Date, AmountRoll, ExitAdress):
+        Satoshi = float(AmountRoll)*100000000
+        SatoshiWith = str('{:.0f}'.format(Satoshi))
         totp = pyotp.TOTP(OTPString)
         Bitmexotp = (totp.now())  
         otpStr = str(Bitmexotp) 
@@ -34,6 +36,10 @@ def PayRoll (Date, AmountRoll, ExitAdress):
 
 
 def PayExcess (NotWithdrawal, Excess, ExitAdress):
+    Satoshi = float(Excess)*100000000
+    SatoshiWith = str('{:.0f}'.format(Satoshi))
+    SatoshiNo = float(NotWithdrawal)*100000000
+    SatoshiNoWith = str('{:.0f}'.format(Satoshi))
     totp = pyotp.TOTP(OTPString)
     Bitmexotp = (totp.now())  
     otpStr = str(Bitmexotp) 
@@ -50,7 +56,7 @@ def PayExcess (NotWithdrawal, Excess, ExitAdress):
     else :
           print ( 'Not excedent amount to withdrawn')     
 
-PayRoll ('30', '10000', ExitAdress)   #INPUT DATE OF PAYMENT (SATOSHI), QUANTITY TO PAY, EXTERNAL WITHDRAWAL ADDRESS
+PayRoll ('30', '0.0001', ExitAdress)   #INPUT DATE OF PAYMENT (SATOSHI), QUANTITY TO PAY, EXTERNAL WITHDRAWAL ADDRESS
 
-#PayExcess ('9033741','10000', ExitAdress) #INPUT AMOUNT YOU DON'T WANT WITHDRAWN(SATOSHI), AMOUNT YOU WANT WITHDRAWN(SATOSHI), EXTERNAL WITHDRAWAL ADDRESS
+#PayExcess ('0.1','0.0001', ExitAdress) #INPUT AMOUNT YOU DON'T WANT WITHDRAWN(SATOSHI), AMOUNT YOU WANT WITHDRAWN(SATOSHI), EXTERNAL WITHDRAWAL ADDRESS
 
