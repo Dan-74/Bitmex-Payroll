@@ -1,0 +1,57 @@
+import bitmex
+import pyotp
+import ccxt
+from datetime import datetime
+import warnings
+warnings.simplefilter("ignore")
+OTPString = "YOUROPTSTRING"
+ExitAdress = 'YOUR WALLET DESTINATION'
+api_key="YOUR API KEY"
+api_secret="YOUR API SECRET"
+client = bitmex.bitmex(test=False, api_key=api_key,  api_secret=api_secret)
+exchange = ccxt.bitmex({
+                  'apiKey': 'YOUR API KEY',
+                  'secret': 'YOUR API SECRET',
+                  'enableRateLimit': True,
+                  })  
+Today = datetime.today() 
+def PayRoll (Date, AmountRoll, ExitAdress):
+        totp = pyotp.TOTP(OTPString)
+        Bitmexotp = (totp.now())  
+        otpStr = str(Bitmexotp) 
+        PayrollDate = Date
+        if Today.strftime("%d") == PayrollDate:   
+          code = 'BTC'
+          amount = AmountRoll 
+          address = ExitAdress
+          tag = None
+          params = {
+                  'otpToken': otpStr,
+                  }
+          exchange.withdraw(code, amount, address, tag, params)
+        else:
+            print ('Not yet pay date')
+
+
+def PayExcess (NotWithdrawal, Excess, ExitAdress):
+    totp = pyotp.TOTP(OTPString)
+    Bitmexotp = (totp.now())  
+    otpStr = str(Bitmexotp) 
+    GetWalletBalance = ((client.User.User_getMargin().result())[0])['walletBalance']
+    if float(GetWalletBalance) > float(NotWithdrawal):
+       code = 'BTC'
+       amount = Excess
+       address = ExitAdress
+       tag = None
+       params = {
+                 'otpToken': otpStr,
+                 }
+       exchange.withdraw(code, amount, address, tag, params)
+    else :
+          print ( 'Not excedent amount to withdrawn')     
+
+
+PayRoll ('30', '10000', ExitAdress)   #INPUT DATE OF PAYMENT (SATOSHI), QUANTITY TO PAY, EXTERNAL WITHDRAWAL ADDRESS
+
+#PayExcess ('9033741','10000', ExitAdress) #INPUT AMOUNT YOU DON'T WANT WITHDRAWN(SATOSHI), AMOUNT YOU WANT WITHDRAWN(SATOSHI), EXTERNAL WITHDRAWAL ADDRESS
+
