@@ -1,5 +1,5 @@
-[![Run on Repl.it](https://repl.it/badge/github/Dan-74/Bitmex-Payroll)](https://repl.it/github/Dan-74/Bitmex-Payroll)
-# Bitmex-Payroll
+# Bitmex-Payroll        [![Run on Repl.it](https://repl.it/badge/github/Dan-74/Bitmex-Payroll)](https://repl.it/github/Dan-74/Bitmex-Payroll)
+
 
 An useful script based on CCXT and PYOTP modules that allow you to set an automated payment from Bitmex on a specific date or when your Bitmex wallet exceed a certain amount.
 It creates a Payroll to use with bot. 
